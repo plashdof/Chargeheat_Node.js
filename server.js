@@ -49,7 +49,7 @@ app.post('/login', (req,res)=>{
                 // ID가 DB에 없을경우
                 resultCode = 204;
                 message = '존재하지 않는 계정';
-            }else if(userPwd !== result[0].userPwd){
+            }else if(userPwd !== result[0].UserPwd){
 
                 // ID는 있지만, 비밀번호가 다를경우
                 resultCode = 204;
