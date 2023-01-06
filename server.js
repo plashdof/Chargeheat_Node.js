@@ -18,8 +18,8 @@ var connection = mysql.createConnection({
 // 서버 테스트용 get API
 app.get('/', (req,res)=>{
     const result = {
-        id : 1234,
-        password : "1234"
+        userId : 1234,
+        userPwd : "1234"
     }
     res.send(result);
 })
