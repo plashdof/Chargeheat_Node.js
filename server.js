@@ -18,7 +18,8 @@ var connection = mysql.createConnection({
 // 서버 테스트용 get API
 app.get('/', (req,res)=>{
     const result = {
-        message: 'helloworld'
+        id : 1234,
+        password : "1234"
     }
     res.send(result);
 })
@@ -55,7 +56,6 @@ app.post('/login', (req,res)=>{
                 resultCode = 204;
                 message = '비밀번호가 틀렸습니다';
             }else{
-
                 // ID 와 비밀번호 모두 일치할 경우
                 resultCode = 200;
                 message = '로그인 성공!!' + result[0].UserName + '님 환영합니다!';
