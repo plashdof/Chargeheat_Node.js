@@ -3,7 +3,7 @@ const mysql = require('mysql')
 var bodyParser = require('body-parser');
 const app = express();
 const cors = require('cors');
-app.use(corse());
+app.use(cors());
 
 var bodyParser = require('body-parser');
 
@@ -28,7 +28,7 @@ app.get('/', (req,res)=>{
     res.send(result);
 })
 
-// eco post API
+// ecopoint 보내기
 app.post('/eco', function (req, res) {
     var image = req.body.image;
     var name = req.body.name;
@@ -59,10 +59,10 @@ app.post('/eco', function (req, res) {
      });
 });
 
-// user profile 정보 불러오기
+// ecopoint 인증사진 get으로 가져오기
 app.get('/admin/eco', (req, res) => {
     
-    let sql = "SELECT photo, name, id FROM ecopoint";
+    let sql = "SELECT image, name, id FROM ecopoint";
   
     connection.query(sql, function (err, rows, result) {
       
