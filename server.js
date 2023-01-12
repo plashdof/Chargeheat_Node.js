@@ -3,8 +3,10 @@ const mysql = require('mysql')
 var bodyParser = require('body-parser');
 const app = express();
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.json({limit: '50mb'})); 
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 // aws RDS 와 연결
 var connection = mysql.createConnection({
