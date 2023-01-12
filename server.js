@@ -61,18 +61,12 @@ app.post('/eco', function (req, res) {
 
 // user profile 정보 불러오기
 app.get('/admin/eco', (req, res) => {
-    // var id = req.body.id;
-    let id = req.get('id');
-    let sql = 'SELECT * FROM ecopoint where id=1234';
+    
+    let sql = "SELECT photo, name, id FROM ecopoint";
   
-    connection.query(sql, id, function (err, rows, result) {
-      var eco = {
-        name : result[0].name,
-        image : result[0].image,
-        id : result[0].id
-      }
-      res.send(eco);
-      // res.json(profile);
+    connection.query(sql, function (err, rows, result) {
+      
+      res.send(rows);
     });
 });
 
