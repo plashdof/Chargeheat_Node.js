@@ -35,7 +35,7 @@ app.post('/eco', function (req, res) {
         console.log(req.headers);
 
     // 삽입을 수행하는 sql문.
-    var sql = 'INSERT INTO ecopoint (photo, name, id) VALUES (?, ?, ?)';
+    var sql = 'INSERT INTO ecopoint (image, name, id) VALUES (?, ?, ?)';
     var params = [image, name,id];
 
         // sql 문의 ?는 두번째 매개변수로 넘겨진 params의 값으로 치환된다.
@@ -67,7 +67,7 @@ app.get('/admin/eco', (req, res) => {
       var eco = {
         name : result[0].name,
         image : result[0].image,
-        id : result[0].image
+        id : result[0].id
       }
       res.send(eco);
       // res.json(profile);
