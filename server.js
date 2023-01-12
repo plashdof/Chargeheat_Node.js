@@ -61,7 +61,7 @@ app.post('/eco', function (req, res) {
 app.get('/admin/eco', (req, res) => {
     // var id = req.body.id;
     let id = req.get('id');
-    let sql = 'SELECT * FROM ecopoint where limit 1';
+    let sql = 'SELECT * FROM ecopoint where id=1234';
   
     connection.query(sql, id, function (err, rows, result) {
       var eco = {
